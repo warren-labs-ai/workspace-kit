@@ -1,6 +1,8 @@
 # Workspace Kit
 
-A monorepo starter for teams building internal workspaces, dashboards, and automated workflows with AI. It provides a shared foundation — UI components, TypeScript types, workflow definitions, and an [MCP](https://modelcontextprotocol.io) core — so you can focus on your tools instead of your tooling.
+A monorepo starter for building AI-powered internal workspaces, dashboards, and workflow systems. It provides a shared foundation — UI components, TypeScript types, workflow definitions, and an [MCP](https://modelcontextprotocol.io) core — so you can focus on your tools instead of your tooling.
+
+This repo is a starting point — not a full production system — designed to be extended with your own data, tools, and integrations.
 
 Built by [Warren Labs](https://github.com/warren-labs).
 
@@ -43,9 +45,9 @@ Open [http://localhost:3000](http://localhost:3000) to view the index page.
 
 ## Where to Start
 
-- **Browse the demos** — run `pnpm dev` and explore the [dashboard examples](#example-packs) at `/docs` and `/investor-room`
-- **Understand the pattern** — read [packages/workflow-packs/README.md](packages/workflow-packs/README.md) to see how packs compose types, components, and data
-- **Extend the MCP core** — see [packages/mcp-core/README.md](packages/mcp-core/README.md) to add your own tools to the server
+- **Explore the examples** — run `pnpm dev` and open `/docs` and `/investor-room`
+- **Understand the pack pattern** — see [packages/workflow-packs/README.md](packages/workflow-packs/README.md)
+- **Extend the MCP core** — see [packages/mcp-core/README.md](packages/mcp-core/README.md)
 
 ## Example Packs
 
@@ -63,7 +65,8 @@ Each pack follows the same pattern: types in `@warren/shared`, components from `
 
 - **Shared types** (`@warren/shared`) — common interfaces like `Document`, `InvestorMetric`, and helpers like `getDocumentStatus` used across all packages
 - **UI components** (`@warren/ui`) — reusable React components (Card, StatusBadge, SummaryCards, AttentionPanel, DocumentTable) styled with Tailwind
-- **App routes** (`apps/dashboard`) — each route composes shared components with data to create a complete pack demo
+- **MCP core** (`@warren/mcp-core`) — a minimal, typed foundation for building MCP-style tool servers
+- **App routes** (`apps/dashboard`) — each route composes shared components and data into a complete pack
 - **Mock data** (`app/data/`) — sample datasets that can be swapped for real API calls or database queries
 
 ## Adding a New Pack
