@@ -1,74 +1,89 @@
-import { Button, Card, Chart } from "@warren/ui";
-import type { MetricPoint, WorkflowStatus } from "@warren/shared";
+import Link from "next/link";
+import { Card } from "@warren/ui";
 
-const sampleMetrics: MetricPoint[] = [
-  { timestamp: "Mon", value: 12 },
-  { timestamp: "Tue", value: 19 },
-  { timestamp: "Wed", value: 15 },
-  { timestamp: "Thu", value: 28 },
-  { timestamp: "Fri", value: 24 },
-  { timestamp: "Sat", value: 31 },
-  { timestamp: "Sun", value: 22 },
+const packs = [
+  {
+    title: "Documentation Dashboard",
+    description:
+      "Track documentation freshness, ownership, and staleness across your team.",
+    href: "/docs",
+    accent: "border-t-blue-500",
+  },
+  {
+    title: "Investor Room",
+    description:
+      "Share key metrics, documents, and updates with current and prospective investors.",
+    href: "/investor-room",
+    accent: "border-t-purple-500",
+  },
 ];
 
-const recentWorkflows: WorkflowStatus[] = [
-  { id: "1", name: "Health Check", state: "completed", startedAt: new Date() },
-  { id: "2", name: "Data Sync", state: "running", startedAt: new Date() },
+const includes = [
+  { label: "MCP Core", detail: "Type-safe server primitives" },
+  { label: "Shared Types", detail: "Common interfaces across packages" },
+  { label: "UI Components", detail: "Cards, badges, charts, tables" },
+  { label: "Workflow Packs", detail: "Declarative workflow definitions" },
 ];
-
-const stateColors: Record<WorkflowStatus["state"], string> = {
-  idle: "text-gray-500",
-  running: "text-blue-600",
-  completed: "text-green-600",
-  failed: "text-red-600",
-};
 
 export default function Home() {
   return (
-    <main className="mx-auto max-w-5xl px-6 py-12">
-      <div className="mb-10">
-        <h1 className="text-3xl font-bold tracking-tight">Workspace Kit</h1>
-        <p className="mt-2 text-gray-600">
-          MCP-powered workspace dashboard
+    <main className="mx-auto max-w-4xl px-6 py-20">
+      {/* Hero */}
+      <div className="mb-12">
+        <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-blue-600">
+          Open Source
+        </p>
+        <h1 className="text-4xl font-bold tracking-tight text-gray-900">
+          Workspace Kit
+        </h1>
+        <p className="mt-3 text-lg text-gray-500">
+          A monorepo starter for building AI-powered internal tools and dashboards.
+        </p>
+        <p className="mt-2 text-sm text-gray-400">
+          Shared types, UI components, MCP primitives, and workflow packs — so you can focus on your tools instead of your tooling.
         </p>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <Card title="Workflows">
-          <ul className="space-y-2">
-            {recentWorkflows.map((w) => (
-              <li key={w.id} className="flex items-center justify-between text-sm">
-                <span className="text-gray-700">{w.name}</span>
-                <span className={`font-medium ${stateColors[w.state]}`}>
-                  {w.state}
-                </span>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-4">
-            <Button size="sm">View all</Button>
-          </div>
-        </Card>
-
-        <Card title="Agents">
-          <p className="text-sm text-gray-600">No agents configured</p>
-          <div className="mt-4">
-            <Button variant="secondary" size="sm">Configure</Button>
-          </div>
-        </Card>
-
-        <Card title="Status">
-          <p className="text-sm text-gray-600">All systems idle</p>
-          <div className="mt-4">
-            <Button variant="ghost" size="sm">Refresh</Button>
-          </div>
-        </Card>
+      {/* What's included */}
+      <div className="mb-14 border-t border-gray-200 pt-8">
+        <h2 className="mb-5 text-xs font-semibold uppercase tracking-wider text-gray-400">
+          What&apos;s Included
+        </h2>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {includes.map((item) => (
+            <div key={item.label}>
+              <p className="text-sm font-semibold text-gray-900">{item.label}</p>
+              <p className="mt-0.5 text-sm text-gray-400">{item.detail}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div className="mt-10">
-        <Card title="Activity">
-          <Chart data={sampleMetrics} />
-        </Card>
+      {/* Example Packs */}
+      <div>
+        <h2 className="mb-5 text-xs font-semibold uppercase tracking-wider text-gray-400">
+          Example Packs
+        </h2>
+        <div className="grid gap-5 sm:grid-cols-2">
+          {packs.map((pack) => (
+            <Link key={pack.href} href={pack.href} className="group">
+              <Card
+                padding="p-6"
+                className={`border-t-[3px] transition-all group-hover:border-gray-300 group-hover:shadow-md ${pack.accent}`}
+              >
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {pack.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-500">
+                  {pack.description}
+                </p>
+                <p className="mt-4 text-sm font-medium text-blue-600 transition-colors group-hover:text-blue-700">
+                  View demo &rarr;
+                </p>
+              </Card>
+            </Link>
+          ))}
+        </div>
       </div>
     </main>
   );

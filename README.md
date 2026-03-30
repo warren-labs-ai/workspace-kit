@@ -25,7 +25,19 @@ pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the dashboard.
+Open [http://localhost:3000](http://localhost:3000) to view the index page.
+
+## Example Packs
+
+The dashboard ships with two demo packs that show how to compose shared components into real tools:
+
+| Route | Pack | Description |
+|-------|------|-------------|
+| `/` | Index | Overview page linking to all example packs |
+| `/docs` | Documentation Dashboard | Track freshness, ownership, and staleness across team docs |
+| `/investor-room` | Investor Room | Key metrics, documents, and updates for investors |
+
+Each pack follows the same pattern: types in `@warren/shared`, components from `@warren/ui`, mock data in the app, and a page that composes them. See [packages/workflow-packs/README.md](packages/workflow-packs/README.md) for details.
 
 ## Structure
 

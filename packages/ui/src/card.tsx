@@ -2,12 +2,19 @@ import type { HTMLAttributes } from "react";
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   title?: string;
+  padding?: string;
 }
 
-export function Card({ title, children, className = "", ...props }: CardProps) {
+export function Card({
+  title,
+  padding = "px-6 py-6",
+  children,
+  className = "",
+  ...props
+}: CardProps) {
   return (
     <div
-      className={`rounded-lg border border-gray-200 bg-white p-6 shadow-sm ${className}`}
+      className={`rounded-lg border border-gray-200 bg-white shadow-sm ${padding} ${className}`}
       {...props}
     >
       {title && (
