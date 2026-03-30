@@ -74,7 +74,7 @@ apps/
   dashboard/              Next.js app — the main UI surface
 
 packages/
-  mcp-core/               MCP server primitives and type-safe request handling
+  mcp-core/               MCP tool server with example tools (see [README](packages/mcp-core/README.md))
   ui/                     Shared React components (Button, Card, Chart)
   shared/                 TypeScript types used across all packages
   workflow-packs/         Declarative workflow definitions and templates
