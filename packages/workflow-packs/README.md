@@ -37,7 +37,7 @@ interface EnrichedDocument extends Document {
 
 Staleness thresholds:
 - **Fresh**: updated within the last 7 days
-- **Warning**: not updated in 7–30 days
+- **Warning**: not updated in 8–30 days
 - **Stale**: not updated in over 30 days
 
 ### Enrichment

@@ -4,6 +4,20 @@ A monorepo starter for teams building internal workspaces, dashboards, and autom
 
 Built by [Warren Labs](https://github.com/warren-labs).
 
+## Screenshots
+
+### Index
+
+![Workspace Kit Index](docs/screenshots/index.png)
+
+### Documentation Dashboard
+
+![Documentation Dashboard](docs/screenshots/docs-dashboard.png)
+
+### Investor Room
+
+![Investor Room](docs/screenshots/investor-room.png)
+
 ## What You Can Build
 
 - Internal dashboards with shared components and live charts

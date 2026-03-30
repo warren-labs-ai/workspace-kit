@@ -14,7 +14,7 @@ const recentDocs = enriched.filter((d) => d.status === "fresh");
 
 const summaryItems: SummaryItem[] = [
   { label: "Fresh", count: recentDocs.length, description: "Updated within 7 days", color: "green" },
-  { label: "Needs Review", count: enriched.filter((d) => d.status === "warning").length, description: "Not updated in 7\u201330 days", color: "amber" },
+  { label: "Needs Review", count: enriched.filter((d) => d.status === "warning").length, description: "Not updated in 8\u201330 days", color: "amber" },
   { label: "Stale", count: staleDocs.length, description: "Not updated in over 30 days", color: "red" },
 ];
 
