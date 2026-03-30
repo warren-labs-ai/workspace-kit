@@ -41,6 +41,12 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) to view the index page.
 
+## Where to Start
+
+- **Browse the demos** — run `pnpm dev` and explore the [dashboard examples](#example-packs) at `/docs` and `/investor-room`
+- **Understand the pattern** — read [packages/workflow-packs/README.md](packages/workflow-packs/README.md) to see how packs compose types, components, and data
+- **Extend the MCP core** — see [packages/mcp-core/README.md](packages/mcp-core/README.md) to add your own tools to the server
+
 ## Example Packs
 
 The dashboard ships with two demo packs that show how to compose shared components into real tools:
