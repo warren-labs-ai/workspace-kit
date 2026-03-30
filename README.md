@@ -53,6 +53,20 @@ The dashboard ships with two demo packs that show how to compose shared componen
 
 Each pack follows the same pattern: types in `@warren/shared`, components from `@warren/ui`, mock data in the app, and a page that composes them. See [packages/workflow-packs/README.md](packages/workflow-packs/README.md) for details.
 
+## How It Works
+
+- **Shared types** (`@warren/shared`) — common interfaces like `Document`, `InvestorMetric`, and helpers like `getDocumentStatus` used across all packages
+- **UI components** (`@warren/ui`) — reusable React components (Card, StatusBadge, SummaryCards, AttentionPanel, DocumentTable) styled with Tailwind
+- **App routes** (`apps/dashboard`) — each route composes shared components with data to create a complete pack demo
+- **Mock data** (`app/data/`) — sample datasets that can be swapped for real API calls or database queries
+
+## Adding a New Pack
+
+1. Define or reuse types in `packages/shared/src/types.ts`
+2. Add mock data in `apps/dashboard/app/data/`
+3. Create a new route in `apps/dashboard/app/` that composes components from `@warren/ui`
+4. Document the pack in `packages/workflow-packs/README.md`
+
 ## Structure
 
 ```
